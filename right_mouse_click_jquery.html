@@ -1,13 +1,22 @@
-$('.svgimg').click(function(){
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script>
+$( document ).ready (function() {
+	$('.svgimg').click(function(){
 				widthsvg = $(this).width();
 				widthsvg = widthsvg * 1.2;
 				$(this).css({'width':widthsvg+'px'});
 			});
-		$('.svgimg').mousedown(function(e) //Right click
+	$('.svgimg').mousedown(function(e) //Right click
+		{
+		if(e.which == 3) //1: left, 2: middle, 3: right
 			{
-			if(e.which == 3) //1: left, 2: middle, 3: right
-				{
-            widthsvg = $(this).width();
-				widthsvg = widthsvg * 0.8;
-				$(this).css({'width':widthsvg+'px'});
-				}
+		widthsvg = $(this).width();
+			widthsvg = widthsvg * 0.8;
+			$(this).css({'width':widthsvg+'px'});
+			}
+		});		
+});		
+</script>
+
+<img src="http://www.ampwebdesign.ca/images/thumbsup.svg" class="svgimg">

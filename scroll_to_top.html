@@ -1,0 +1,44 @@
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$( document ).ready (function() {
+	var amountScrolled = 500;
+
+	$(window).scroll(function() {
+		if ( $(window).scrollTop() > amountScrolled ) {
+			$('a.back-to-top').fadeIn('slow');
+		} else {
+			$('a.back-to-top').fadeOut('slow');
+		}
+	});
+	$('a.back-to-top').click(function() {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 700);
+		return false;
+	});
+	
+});
+</script>
+
+
+<style>
+a.back-to-top {
+	display: none;
+	width: 40px;
+	height: 40px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #444444 url("/images/up-arrow.png") no-repeat center 26%;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+a:hover.back-to-top {
+	background-color: #000;
+}
+</style>   
+
+<a href="#" class="back-to-top">Back to Top</a>
