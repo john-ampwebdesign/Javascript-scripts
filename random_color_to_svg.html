@@ -1,0 +1,105 @@
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$( document ).ready (function() {
+	$("[class*='abc']").hover(function(){
+			cba = $(this);
+			cba.attr('fill', '#145288');
+			}, function(){
+			cba.attr('fill', getRandomColor());
+			cba.attr('stroke-width', '1');
+			timeout = Math.random() * 1000;
+			cba.delay( timeout ).fadeOut( timeout * 0.1 );
+			backop = $('#spotcolor').css('opacity');
+			backop = backop - 0.01;
+			$('#spotcolor').css({'opacity':backop});
+			getRandomStart();
+		});
+		
+		$("[class*='amp']").hover(function(){ 
+			$(this).attr('fill', getRandomColor());
+			getRandomStart();
+		});
+		
+		getRandomStart();
+		
+		function getRandomStart() { 
+
+		if ( $(window).width() <= "640" ) {
+			for (var i = 0; i < 2000; i++ ) { 
+				a = Math.floor(Math.random() * 2) ;
+				b = Math.floor(Math.random() * 10) ;
+				c = Math.floor(Math.random() * 10) ;
+				initcolor = getRandomColor();
+				initbox = Math.floor(Math.random() * 100); //first 100
+				$('.abc'+a+b+c).attr('fill', initcolor);
+				$('.abc'+a+b+c).attr('stroke-width', '0');
+				$('.abc'+a+b+c).delay( initbox * 75 ).fadeOut( initbox * 15 );
+				backop = $('#spotcolor').css('opacity');
+				if (backop <= 1) {
+					backop = backop - 0.01;
+					$('#spotcolor').css({'opacity':backop});
+				};
+			}
+		} else {
+			for (var i = 0; i < 10; i++ ) { 
+				a = Math.floor(Math.random() * 2) ;
+				b = Math.floor(Math.random() * 10) ;
+				c = Math.floor(Math.random() * 10) ;
+				initcolor = getRandomColor();
+				initbox = Math.floor(Math.random() * 100); //first 100
+				$('.abc'+a+b+c).attr('fill', initcolor);
+				$('.abc'+a+b+c).attr('stroke-width', '1');
+				$('.abc'+a+b+c).delay( initbox * 75 ).fadeOut( initbox * 15 );
+			}			
+		
+		}
+}
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+});
+</script>
+
+<svg version="1.1" baseProfile="tiny" id="Layer_2" x="0px" y="0px" width="960px" height="520px" viewBox="0 0 960 520" xml:space="preserve">
+<g id="Layer_1"> <!-- this should be a complex SVG -->
+	<g>
+		<g> <!-- abc layer -->
+			<path class="abc001" fill="none" stroke="#FFFFFF" stroke-width="3" d="M44.39,348.533c3.937,4.925,7.859,9.904,11.768,14.94c0.772-0.858,1.545-1.714,2.318-2.567
+				c-2.097-2.403-4.195-4.796-6.292-7.167l2.247-1.988c2.024,2.289,4.049,4.6,6.073,6.918c0.287-0.314,0.575-0.626,0.862-0.94
+				c-4.986-4.508-9.999-8.938-15.042-13.282C45.678,345.807,45.034,347.17,44.39,348.533z"/>
+			<path class="abc001" fill="none" stroke="#FFFFFF" stroke-width="3" d="M868.956,258.944c1.764-2.066,3.534-4.119,5.306-6.172c-2.734-1.238-5.47-2.457-8.208-3.656
+				c0.532,3.046,1.042,6.094,1.567,9.141C868.066,258.485,868.511,258.715,868.956,258.944z"/>
+			<path class="abc001" fill="none" stroke="#FFFFFF" stroke-width="3" d="M228.045,117.288c1.2,0.25,2.399,0.509,3.598,0.767c0.92-1.329,1.845-2.652,2.768-3.976
+				c-1.108-1.18-2.218-2.356-3.33-3.529C230.068,112.795,229.052,115.04,228.045,117.288z"/>
+		
+			<path class="abc001" fill="none" stroke="#FFFFFF" stroke-width="3" d="M786.429,261.182c-0.732,0.353-1.465,0.715-2.197,1.07c1.101,0.284,2.203,0.551,3.304,0.842
+				C787.166,262.456,786.799,261.817,786.429,261.182z"/>
+				<path class="abc100" d="M477.816,100.237c-0.304,0.961-0.611,1.919-0.915,2.881c7.942,2.192,15.866,4.566,23.775,7.089
+				c1.11-0.134,2.22-0.266,3.329-0.393c-0.111-0.621-0.225-1.242-0.336-1.863C495.08,105.19,486.46,102.617,477.816,100.237z"/>
+			<path class="abc100" d="M634.002,169.257c9.292,5.306,18.548,10.854,27.765,16.632c0.319-0.985,0.639-1.972,0.958-2.956
+				c-9.942-6.226-19.934-12.167-29.958-17.847C633.179,166.477,633.592,167.865,634.002,169.257z"/>
+			<path class="abc100" d="M471.999,98.657c-2.722-0.721-5.447-1.415-8.173-2.099c0.538,1.176,1.08,2.348,1.616,3.525
+				c2.203,0.563,4.405,1.143,6.606,1.731C472.032,100.763,472.015,99.71,471.999,98.657z"/>
+			<path class="abc101" d="M597.6,147.969c-0.738,0.233-1.477,0.475-2.214,0.712c0.481,0.239,0.965,0.469,1.447,0.709
+				C597.089,148.917,597.344,148.441,597.6,147.969z"/>
+			<path class="abc101" d="M458.632,98.37c0.986,0.24,1.971,0.499,2.957,0.744c-0.533-1.168-1.059-2.343-1.593-3.509
+				c-0.019-0.004-0.037-0.008-0.055-0.013C459.505,96.519,459.067,97.443,458.632,98.37z"/>
+			<path class="abc101" d="M552.771,125.947c-0.955-0.394-1.91-0.791-2.866-1.18c-3.901-1.588-7.809-3.148-11.728-4.656
+				c0.469,1.29,0.931,2.586,1.397,3.878c3.301,1.288,6.6,2.603,9.895,3.948c0.956,0.391,1.912,0.778,2.867,1.173
+				c3.245,1.343,6.486,2.718,9.726,4.117c1.007,0.435,2.012,0.881,3.018,1.322c0.094,0.041,0.188,0.082,0.28,0.123
+				c-0.709-1.44-1.422-2.876-2.133-4.313c-1.996-0.863-3.991-1.731-5.987-2.571C555.753,127.162,554.26,126.562,552.771,125.947z"/>
+		</g>
+		<g>		<!-- amp layer  letter i -->
+			<path class="amp012" fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-miterlimit="10" d="M762.253,334.658l-22.518-2.183l19.036-83.808
+			l22.518,2.182L762.253,334.658z M785.059,234.255c-0.591,2.604-2.161,4.641-4.712,6.115s-5.341,1.866-8.365,1.18
+			c-3.137-0.712-5.539-2.26-7.213-4.645c-1.675-2.383-2.207-4.924-1.595-7.621c0.612-2.695,2.189-4.757,4.73-6.185
+			c2.54-1.426,5.375-1.785,8.512-1.073c3.133,0.712,5.51,2.256,7.132,4.627C785.166,229.025,785.671,231.56,785.059,234.255z"/>
+		</g>
+	</g>
+</g>
+</svg>
