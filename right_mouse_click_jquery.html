@@ -1,0 +1,13 @@
+$('.svgimg').click(function(){
+				widthsvg = $(this).width();
+				widthsvg = widthsvg * 1.2;
+				$(this).css({'width':widthsvg+'px'});
+			});
+		$('.svgimg').mousedown(function(e) //Right click
+			{
+			if(e.which == 3) //1: left, 2: middle, 3: right
+				{
+            widthsvg = $(this).width();
+				widthsvg = widthsvg * 0.8;
+				$(this).css({'width':widthsvg+'px'});
+				}
