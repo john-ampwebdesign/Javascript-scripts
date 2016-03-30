@@ -1,0 +1,21 @@
+<script type="text/javascript">
+$( document ).ready(function() {
+    if(!Modernizr.svg){
+      $("img").each(function(){
+        var src = this.src;
+        if( src.match(/svg$/) ){
+            // Replace "svg" by "png"
+            this.src = src.slice(0,-3) + 'png'
+        }           
+      });
+	  $("input").each(function(){
+        var src = this.src;
+        if( src.match(/svg$/) ){
+            // Replace "svg" by "png"
+            this.src = src.slice(0,-3) + 'png'
+        }           
+      });
+    }
+});
+</script>
+<script src="/js/modernizr-custom.js"></script>
